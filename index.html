@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تدريب التحويل من الثنائي إلى العشري</title>
+  <meta name="description" content="تطبيق ويب عربي تفاعلي للتدريب على التحويل من النظام الثنائي إلى العشري خطوة بخطوة مع تحقق فوري، تلميحات، وحل كامل." />
+  <meta name="keywords" content="Binary, Decimal, تحويل ثنائي, تعلم البرمجة, نظام العد الثنائي, تدريب" />
+  <meta name="author" content="B2nd9R" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0f766e" />
+  <meta name="msapplication-TileColor" content="#0f766e" />
+  <meta name="application-name" content="Binary Decimal Practice" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Binary Decimal Practice" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <link rel="canonical" href="https://b2nd9r.github.io/binary-decimal-practice/" />
+  <link rel="image_src" href="https://b2nd9r.github.io/binary-decimal-practice/assets/image.png" />
+
+  <meta property="og:locale" content="ar_AR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Binary Decimal Practice" />
+  <meta property="og:title" content="تدريب التحويل من الثنائي إلى العشري" />
+  <meta property="og:description" content="تدرّب على تحويل الأعداد الثنائية إلى عشرية خطوة بخطوة مع واجهة عربية RTL وتغذية راجعة فورية." />
+  <meta property="og:url" content="https://b2nd9r.github.io/binary-decimal-practice/" />
+  <meta property="og:image:url" content="https://b2nd9r.github.io/binary-decimal-practice/assets/image.png" />
+  <meta property="og:image" content="https://b2nd9r.github.io/binary-decimal-practice/assets/image.png" />
+  <meta property="og:image:secure_url" content="https://b2nd9r.github.io/binary-decimal-practice/assets/image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="معاينة تطبيق التدريب على التحويل من الثنائي إلى العشري" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="تدريب التحويل من الثنائي إلى العشري" />
+  <meta name="twitter:description" content="تطبيق تدريبي عربي لتحويل Binary إلى Decimal مع خطوات واضحة وتحقق مباشر." />
+  <meta name="twitter:site" content="@B2nd9R" />
+  <meta name="twitter:image" content="https://b2nd9r.github.io/binary-decimal-practice/assets/image.png" />
+  <meta name="twitter:image:alt" content="معاينة تطبيق Binary Decimal Practice" />
+  <meta name="twitter:creator" content="@B2nd9R" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Binary Decimal Practice",
+        "url": "https://b2nd9r.github.io/binary-decimal-practice/",
+        "inLanguage": "ar",
+        "description": "تطبيق تدريبي عربي للتحويل من النظام الثنائي إلى العشري خطوة بخطوة"
+      },
+      {
+        "@type": "EducationalApplication",
+        "name": "Binary Decimal Practice",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "url": "https://b2nd9r.github.io/binary-decimal-practice/",
+        "image": "https://b2nd9r.github.io/binary-decimal-practice/assets/image.png",
+        "inLanguage": "ar",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Person",
+          "name": "B2nd9R"
+        },
+        "description": "تطبيق ويب تفاعلي للتدريب على التحويل من Binary إلى Decimal مع تلميحات وتحقق فوري"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">Binary to Decimal Practice</p>
+      <h1>تدريب التحويل من النظام الثنائي إلى العشري</h1>
+      <p class="subtitle">درّب نفسك خطوة بخطوة: فكّر، اكتب، تحقّق، ثم راجع الحل الكامل.</p>
+
+      <div class="control-bar">
+        <label for="bitLengthSelect">طول العدد الثنائي:</label>
+        <select id="bitLengthSelect" class="select-control">
+          <option value="random">عشوائي (4-8 بت)</option>
+          <option value="4">4 بت</option>
+          <option value="5">5 بت</option>
+          <option value="6">6 بت</option>
+          <option value="7">7 بت</option>
+          <option value="8">8 بت</option>
+        </select>
+      </div>
+
+      <div class="binary-display-wrap">
+        <span class="label">العدد الثنائي الحالي</span>
+        <div id="binaryDisplay" class="binary-display" aria-live="polite">101101</div>
+      </div>
+
+      <div class="stats-strip" aria-live="polite">
+        <div class="stat-pill"><span>المحاولات</span><strong id="attemptsStat">0</strong></div>
+        <div class="stat-pill"><span>إجابات صحيحة</span><strong id="correctStat">0</strong></div>
+        <div class="stat-pill"><span>السلسلة الحالية</span><strong id="streakStat">0</strong></div>
+        <div class="stat-pill"><span>الدقة</span><strong id="accuracyStat">0%</strong></div>
+      </div>
+    </header>
+
+    <section class="card steps-card" aria-label="خطوات التحويل">
+      <h2>خطوات الحل</h2>
+
+      <div class="step-block">
+        <h3>الخطوة 1 (يكتبها المتدرّب)</h3>
+        <p>اكتب قوى العدد 2 من اليمين إلى اليسار بما يناسب طول العدد.</p>
+        <textarea id="step1Input" rows="2" placeholder="مثال: 2^0, 2^1, 2^2, 2^3, ..."></textarea>
+      </div>
+
+      <div class="step-block auto-step">
+        <h3>الخطوة 2 (تلقائي)</h3>
+        <p>ربط كل بت بقيمته المكانية:</p>
+        <div id="step2Grid" class="bit-power-grid" aria-live="polite"></div>
+      </div>
+
+      <div class="step-block auto-step">
+        <h3>الخطوة 3 (تلقائي)</h3>
+        <p>صيغة الضرب بين البت والوزن المكاني:</p>
+        <div id="step3Expression" class="expression" aria-live="polite"></div>
+      </div>
+
+      <div class="step-block">
+        <h3>الخطوة 4 (يكتبها المتدرّب)</h3>
+        <p>قيّم كل جزء (مثال: 32 + 0 + 8 + 4 + 0 + 1):</p>
+        <textarea id="step4Input" rows="2" placeholder="اكتب القيم النهائية بعد التقييم"></textarea>
+      </div>
+
+      <div class="step-block">
+        <h3>الخطوة 6 (الناتج النهائي)</h3>
+        <label for="finalAnswerInput">أدخل الناتج العشري النهائي:</label>
+        <input id="finalAnswerInput" type="number" inputmode="numeric" placeholder="مثال: 45" />
+      </div>
+
+      <div class="actions">
+        <button id="checkBtn" class="btn btn-primary">تحقق من الإجابة</button>
+        <button id="showSolutionBtn" class="btn btn-secondary">إظهار الحل</button>
+        <button id="hintBtn" class="btn btn-secondary btn-alt">تلميح</button>
+        <button id="newQuestionBtn" class="btn btn-ghost">سؤال جديد</button>
+      </div>
+
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+      <div id="hintBox" class="hint hidden" aria-live="polite"></div>
+      <div id="solutionBox" class="solution hidden" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

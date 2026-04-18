@@ -1,0 +1,364 @@
+:root {
+  --bg-start: #f8f4ea;
+  --bg-end: #e7f1f4;
+  --ink: #112026;
+  --muted: #4c5f65;
+  --card: rgba(255, 255, 255, 0.88);
+  --line: #d0dde2;
+  --accent: #0f766e;
+  --accent-strong: #0b5c56;
+  --warn: #c2410c;
+  --ok: #0f766e;
+  --shadow: 0 14px 34px rgba(17, 32, 38, 0.12);
+  --number-font: "Orbitron", "Consolas", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 400px at 5% -10%, rgba(15, 118, 110, 0.18), transparent 50%),
+    radial-gradient(900px 600px at 100% 10%, rgba(14, 116, 144, 0.2), transparent 50%),
+    linear-gradient(150deg, var(--bg-start), var(--bg-end));
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.app-shell {
+  width: min(980px, 100%);
+  display: grid;
+  gap: 18px;
+}
+
+.hero,
+.steps-card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.hero {
+  padding: 24px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+h1 {
+  margin: 4px 0 8px;
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+.control-bar {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.select-control {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font: inherit;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.select-control:focus {
+  outline: 3px solid rgba(15, 118, 110, 0.22);
+  border-color: var(--accent);
+}
+
+.binary-display-wrap {
+  margin-top: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.binary-display {
+  font-family: var(--number-font);
+  letter-spacing: 0.12em;
+  font-weight: 900;
+  font-size: clamp(1.4rem, 4vw, 2.1rem);
+  background: #ffffff;
+  border: 2px dashed var(--line);
+  border-radius: 14px;
+  padding: 12px 16px;
+  text-align: center;
+  animation: pulseIn 0.36s ease;
+}
+
+.stats-strip {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.stat-pill {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+  display: grid;
+  gap: 4px;
+}
+
+.stat-pill span {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.stat-pill strong {
+  font-family: var(--number-font);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.1rem;
+}
+
+.steps-card {
+  padding: 22px;
+}
+
+h2 {
+  margin: 0 0 16px;
+  font-size: 1.35rem;
+}
+
+.step-block {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #ffffff;
+}
+
+.auto-step {
+  background: linear-gradient(180deg, #f2fbf8, #ffffff);
+}
+
+.step-block h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.step-block p {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+textarea,
+input[type="number"] {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+  color: var(--ink);
+}
+
+input[type="number"] {
+  font-family: var(--number-font);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+textarea:focus,
+input[type="number"]:focus {
+  outline: 3px solid rgba(15, 118, 110, 0.25);
+  border-color: var(--accent);
+}
+
+.bit-power-grid {
+  overflow-x: auto;
+}
+
+.grid-row {
+  display: flex;
+  min-width: max-content;
+  gap: 8px;
+}
+
+.grid-row + .grid-row {
+  margin-top: 8px;
+}
+
+.grid-cell {
+  min-width: 66px;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px;
+  font-family: var(--number-font);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  background: #ffffff;
+}
+
+.cell-head {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.expression,
+.solution {
+  font-family: var(--number-font);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.8;
+  background: #f9fcfd;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  overflow-x: auto;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.16s ease, filter 0.16s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: #0f4c81;
+  color: #ffffff;
+}
+
+.btn-alt {
+  background: #7c3aed;
+}
+
+.btn-ghost {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.feedback {
+  margin-top: 12px;
+  font-weight: 700;
+  min-height: 1.8em;
+}
+
+.feedback.ok {
+  color: var(--ok);
+}
+
+.feedback.error {
+  color: var(--warn);
+}
+
+.hint {
+  margin-top: 10px;
+  background: #fffbeb;
+  border: 1px solid #f7d48b;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #7a4b06;
+  font-weight: 700;
+}
+
+.feedback.flash {
+  animation: flashUp 0.38s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes pulseIn {
+  from {
+    transform: scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes flashUp {
+  from {
+    transform: translateY(4px);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 12px;
+  }
+
+  .hero,
+  .steps-card {
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  .grid-cell {
+    min-width: 58px;
+    padding: 7px;
+  }
+
+  .stats-strip {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
